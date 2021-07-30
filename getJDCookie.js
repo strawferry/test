@@ -26,6 +26,7 @@ function loginEntrance() {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} API请求失败，请检查网路重试`);
         } else {
+          console.log(`----taskUrl------${JSON.stringify(resp)}`)
           $.headers = resp.headers;
           $.data = JSON.parse(data);
           await formatSetCookies($.headers, $.data);
@@ -47,6 +48,7 @@ function generateQrcode() {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} API请求失败，请检查网路重试`);
         } else {
+          console.log(`----taskPostUrl------${JSON.stringify(resp)}`)
           $.stepsHeaders = resp.headers;
           data = JSON.parse(data);
           token = data['token'];
@@ -88,6 +90,7 @@ function checkLogin() {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} API请求失败，请检查网路重试`);
         } else {
+          console.log(`----post------${JSON.stringify(resp)}`)
           data = JSON.parse(data);
           $.checkLoginHeaders = resp.headers;
           // $.log(`errcode:${data['errcode']}`)
